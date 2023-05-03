@@ -180,11 +180,15 @@ const conjugatedVerbs = (meters) => {
     console.log(
       `${meters} ${metersName}ів це ${kilometers} ${kilometersName}a`
     );
+  } else if (meters % 100 == 0 && kilometers.toString().endsWith(1)) {
+    console.log(`${meters} ${metersName}ів це ${kilometers} ${kilometersName}`);
   } else if (meters % 10 == 0 && meters != 1000) {
     console.log(
       `${meters} ${metersName}ів це ${kilometers} ${kilometersName}a`
     );
   } else if (meters % 10 == 0 && meters == 1000) {
+    console.log(`${meters} ${metersName}ів це ${kilometers} ${kilometersName}`);
+  } else if (meters % 1000 == 0 && kilometers.toString().endsWith(1)) {
     console.log(`${meters} ${metersName}ів це ${kilometers} ${kilometersName}`);
   } else if (meters % 10 == 0 && meters > 1001) {
     console.log(
@@ -204,4 +208,4 @@ const conjugatedVerbs = (meters) => {
     );
   }
 };
-conjugatedVerbs(5000);
+conjugatedVerbs(501000);
